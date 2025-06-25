@@ -1,8 +1,8 @@
 "use client";
 
 import Button from "@/components/Button";
-import designExample1 from "@/assets/images/design-example-1.png";
-import designExample2 from "@/assets/images/design-example-2.png";
+import designExample1 from "@/assets/images/design-example-4.png";
+import designExample2 from "@/assets/images/design-example-3.png";
 import Image from "next/image";
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
@@ -103,20 +103,20 @@ export default function Hero() {
                     initial={{ opacity: 0, x: 275, y: 100 }}
                     className="absolute -top-4 right-80 hidden lg:block"
                 >
-                    <Pointer color="red" name="Brew" />
+                    <Pointer color="red" name="Tino" />
                 </motion.div>
 
                 <div className="flex justify-center">
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold">
-                        ✨ $7.5M eed round raised
+                        ✨ Built for you by you ✨
                     </div>
                 </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 ">
-                    Impactful design, created effortlessly
+                <h1 className="text-6xl md:text-7xl lg:text-7xl font-medium text-center mt-6 ">
+                One Hub. All Your Campus Tools, <br />
+                Free Forever
                 </h1>
                 <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
-                    Design tool shouldn't slow you down. Create, prototype, and
-                    test with ease.
+                From AI-powered resumes to certificate generation, memes, marksheets, and even project ideas , DivineLab gives you everything in one click.
                 </p>
                 <form className="mx-auto flex border border-white/50 rounded-full p-2 mt-8 max-w-lg">
                     <input

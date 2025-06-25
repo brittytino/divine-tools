@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Modern Design Tool Landing Page",
-    description: "Created with the help of Frontend Tribe",
+    title: "DivineLab - One Hub. All Your Campus Tools, Free Forever",
+    description: "DivineLab is a platform for creating and sharing designs.",
 };
 
 export default function RootLayout({

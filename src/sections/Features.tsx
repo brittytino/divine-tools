@@ -12,13 +12,13 @@ import Key from "@/components/Key";
 import { motion } from "framer-motion";
 
 const features = [
-    "Asset Library",
-    "Code Preview",
-    "Flow Mode",
-    "Smart Sync",
-    "Auto Layout",
-    "Fast Search",
-    "Smart Guides",
+    "Resume Builder",
+    "Certificate Generator",
+    "Project Ideas",
+    "Marksheet Creator",
+    "LinkedIn Banner",
+    "CGPA Converter",
+    "Bio Link Tool",
 ];
 
 const parentVariants = {
@@ -48,8 +48,8 @@ export default function Features() {
                     <Tag>Features</Tag>
                 </div>
                 <h2 className="text-6xl font-medium text-center mt-6 max-w-2xl m-auto">
-                    Where power meets{" "}
-                    <span className="text-lime-400">simplicity</span>
+                    Where student needs meet{" "}
+                    <span className="text-lime-400">smart solutions</span>
                 </h2>
                 <motion.div
                     variants={parentVariants}
@@ -64,8 +64,8 @@ export default function Features() {
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             <FeatureCard
-                                title="Real-time collaboration"
-                                description="Work together seamlessly with conflict-free team editing"
+                                title="Generate 200+ certificates in 1 click"
+                                description="Used by tech clubs & event teams to automate certificate creation using Excel sheets"
                                 className="md:col-span-2 lg:col-span-1"
                             >
                                 <div className="aspect-video flex items-center justify-center">
@@ -106,18 +106,17 @@ export default function Features() {
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             <FeatureCard
-                                title="Interactive prototyping"
-                                description="Engage your clients with prototypes that react
-                                to user actions"
+                                title="AI-powered ideas & resumes"
+                                description="Struggling with projects or resumes? Get AI-curated outputs in seconds with export options"
                                 className="md:col-span-2 lg:col-span-1 group transition duration-500"
                             >
                                 <div className="aspect-video flex items-center justify-center">
                                     <p className="group-hover:text-white/40 transition duration-500 text-4xl font-extrabold text-white/20 text-center">
-                                        We've achived{" "}
-                                        <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                            incrideible
+                                        Make your{" "}
+                                        <span className="bg-gradient-to-r from-green-300 to-lime-400 bg-clip-text text-transparent">
+                                            student profile
                                         </span>{" "}
-                                        growth this year
+                                        stand out
                                     </p>
                                 </div>
                             </FeatureCard>
@@ -130,19 +129,19 @@ export default function Features() {
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             <FeatureCard
-                                title="Keyboard quick actions"
-                                description="Powerfull commands to make design quickly"
+                                title="Fast access tools with shortcuts"
+                                description="Common college-use tools like CGPA converters & link tools are just a keystroke away"
                                 className="group md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto"
                             >
                                 <div className="aspect-video flex justify-center items-center gap-4">
                                     <Key className="w-28 outline outline-2 outline-transparent group-hover:outline-lime-400 transition-all duration-500 outline-offset-2 group-hover:translate-y-1">
-                                        shift
+                                        ctrl
                                     </Key>
                                     <Key className="outline outline-2 outline-transparent group-hover:outline-lime-400 transition-all duration-500 outline-offset-2 group-hover:translate-y-1 delay-150">
-                                        alt
+                                        shift
                                     </Key>
                                     <Key className="outline outline-2 outline-transparent group-hover:outline-lime-400 transition-all duration-500 outline-offset-2 group-hover:translate-y-1 delay-300">
-                                        C
+                                        D
                                     </Key>
                                 </div>
                             </FeatureCard>

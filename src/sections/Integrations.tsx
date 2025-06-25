@@ -5,38 +5,71 @@ import slackIcon from "@/assets/images/slack-logo.svg";
 import relumeIcon from "@/assets/images/relume-logo.svg";
 import framerIcon from "@/assets/images/framer-logo.svg";
 import githubIcon from "@/assets/images/github-logo.svg";
+
+// NEW ICONS (you mentioned these)
+import whatsappIcon from "@/assets/images/whatsapp-logo.svg";
+import linkedinIcon from "@/assets/images/linkedin-logo.svg";
+import canvaIcon from "@/assets/images/canva-logo.svg";
+import chatgptIcon from "@/assets/images/chatgpt-logo.svg";
+import googleSheetsIcon from "@/assets/images/google-sheets.svg";
+
 import IntegrationColumn from "@/components/IntegrationColumn";
 
 const integrations = [
     {
-        name: "Figma",
-        icon: figmaIcon,
-        description: "Figma is a collaborative interface design tool.",
+        name: "WhatsApp",
+        icon: whatsappIcon,
+        description: "Share your certificates and resumes directly with event groups or friends in 1 tap.",
     },
     {
-        name: "Notion",
-        icon: notionIcon,
-        description: "Notion is an all-in-one workspace for notes and docs.",
+        name: "Google Sheets",
+        icon: googleSheetsIcon,
+        description: "Upload Excel/Sheets to auto-generate certificates, mark sheets, or event results.",
     },
     {
-        name: "Slack",
-        icon: slackIcon,
-        description: "Slack is a powerful team communication platform.",
+        name: "LinkedIn",
+        icon: linkedinIcon,
+        description: "Post your auto-generated banners and student memes directly to LinkedIn.",
     },
     {
-        name: "Relume",
-        icon: relumeIcon,
-        description: "Relume is a no-code website builder and design system.",
+        name: "ChatGPT",
+        icon: chatgptIcon,
+        description: "Use AI to help generate resume content or final year project topics in seconds.",
     },
     {
-        name: "Framer",
-        icon: framerIcon,
-        description: "Framer is a professional website prototyping tool.",
+        name: "Canva",
+        icon: canvaIcon,
+        description: "Take your resume or banner designs into Canva to customize further.",
     },
     {
         name: "GitHub",
         icon: githubIcon,
-        description: "GitHub is the leading platform for code collaboration.",
+        description: "Host and show off your project ideas with instant GitHub links.",
+    },
+    {
+        name: "Figma",
+        icon: figmaIcon,
+        description: "Export UI ideas or references from your projects directly into Figma.",
+    },
+    {
+        name: "Notion",
+        icon: notionIcon,
+        description: "Organize your project tasks, idea lists, and club management notes.",
+    },
+    {
+        name: "Slack",
+        icon: slackIcon,
+        description: "Collaborate with your college or freelance teams on tool-generated content.",
+    },
+    {
+        name: "Framer",
+        icon: framerIcon,
+        description: "Perfect for showcasing your projects or portfolios in one click.",
+    },
+    {
+        name: "Relume",
+        icon: relumeIcon,
+        description: "Use website builders like Relume to create student portfolios instantly.",
     },
 ];
 
@@ -44,20 +77,18 @@ export type IntegrationsType = typeof integrations;
 
 export default function Integrations() {
     return (
-        <section className="py-24 overflow-hidden ">
+        <section className="py-24 overflow-hidden">
             <div className="container">
                 <div className="grid lg:grid-cols-2 items-center lg:gap-16">
                     <div>
-                        <Tag>Integration</Tag>
+                        <Tag>Integrations</Tag>
                         <h2 className="text-6xl font-medium mt-6">
-                            Plays well with{" "}
-                            <span className="text-lime-400 ">others</span>
+                            Works with your daily{" "}
+                            <span className="text-lime-400">college & tech tools</span>
                         </h2>
 
-                        <p className="text-white/50 mt-4 text-lg ">
-                            Layers seamessly connects with your favourite tools
-                            and platforms. It's easy to plug into any workflow
-                            and collaborate platforms.
+                        <p className="text-white/50 mt-4 text-lg">
+                            Divine Tools connects with the platforms you already use — from Excel sheets for certificates to ChatGPT for ideas and even WhatsApp for quick sharing. No boring steps, just plug and go!
                         </p>
                     </div>
                     <div>
