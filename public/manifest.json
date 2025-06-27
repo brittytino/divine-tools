@@ -1,0 +1,30 @@
+{
+  "name": "Divine Lab - Student Tools Coimbatore",
+  "short_name": "Divine Lab",
+  "description": "Free online tools for students in Coimbatore and Tamil Nadu. Create resumes, certificates, project ideas, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/dlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/icons/dlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Divine Lab Logo"
+    }
+  ]
+} 

@@ -8,7 +8,6 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Lightbulb } from "lucide-react";
-
 // Import components
 import { UserDetailsForm, UserDetails } from "./components/UserDetailsForm";
 import { Header } from "./components/Header";

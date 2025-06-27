@@ -1,0 +1,34 @@
+# https://lab.divineinfotech.org robots.txt
+User-agent: *
+Allow: /
+
+# Allow all bots to access these directories
+Allow: /tools/
+Allow: /about/
+Allow: /company/
+Allow: /products/
+Allow: /icons/
+
+# Sitemaps
+Sitemap: https://lab.divineinfotech.org/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Additional rules for specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block certain directories
+Disallow: /api/
+Disallow: /.next/
+Disallow: /_next/ 
