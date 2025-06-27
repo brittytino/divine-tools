@@ -71,7 +71,7 @@ function GeneratedProjectsContent() {
     };
 
     loadData();
-  }, []); // Empty dependency array since we only want to load once
+  }, [showToast]);
 
   const handleBack = useCallback(() => {
     router.push("/tools/project-ideas");

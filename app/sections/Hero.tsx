@@ -56,7 +56,7 @@ export default function Hero() {
                 { duration: 0.5, ease: "easeInOut" },
             ],
         ]);
-    }, []);
+    }, [leftDesignAnimate, leftPointerAnimate, rightDesignAnimate, rightPointerAnimate, leftDesignScope, leftPointerScope, rightDesignScope, rightPointerScope]);
 
     return (
         <section

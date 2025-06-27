@@ -34,7 +34,7 @@ export interface DynamicStat {
   label: string;
   value: number;
   suffix?: string;
-  icon: any;
+  icon: React.ElementType;
 }
 
 export interface PopupMessage {

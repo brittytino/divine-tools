@@ -15,7 +15,7 @@ interface PdfPreviewDialogProps {
   onDownload: () => void;
 }
 
-export const PdfPreviewDialog = forwardRef<HTMLDivElement, PdfPreviewDialogProps>(
+const PdfPreviewDialogComponent = forwardRef<HTMLDivElement, PdfPreviewDialogProps>(
   ({ open, onOpenChange, project, userDetails, onDownload }, ref) => {
     if (!project || !userDetails) return null;
 
@@ -133,4 +133,8 @@ export const PdfPreviewDialog = forwardRef<HTMLDivElement, PdfPreviewDialogProps
       </AlertDialog>
     );
   }
-); 
+);
+
+PdfPreviewDialogComponent.displayName = 'PdfPreviewDialog';
+
+export const PdfPreviewDialog = PdfPreviewDialogComponent; 
