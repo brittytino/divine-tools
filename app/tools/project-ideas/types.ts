@@ -13,6 +13,9 @@ export interface Project {
   views: number;
   trending: boolean;
   domain: Domain;
+  duration?: string;
+  complexity?: string;
+  features?: string[];
 }
 
 export interface Testimonial {
