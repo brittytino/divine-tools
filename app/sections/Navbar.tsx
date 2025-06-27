@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
     { label: "Home", href: "#" },
@@ -97,19 +98,18 @@ export default function Navbar() {
                     `}>
                         <div className="grid grid-cols-2 lg:grid-cols-3 items-center py-3 px-4 lg:px-8">
                             
-                            {/* LOGO + TITLE */}
-                            <div className="flex items-center gap-3">
-                                <div className="relative">
-                                    <Image
-                                        src={logoImage}
-                                        alt="Divine Tools Logo"
-                                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-                                    />
-                                </div>
-                                <h1 className="text-white text-lg sm:text-xl lg:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                                DivineLab
-                                </h1>
-                            </div>
+                        <Link href="/" className="flex items-center gap-3">
+  <div className="relative">
+    <Image
+      src={logoImage}
+      alt="Divine Tools Logo"
+      className="h-8 sm:h-10 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
+  <h1 className="text-white text-lg sm:text-xl lg:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+    DivineLab
+  </h1>
+</Link>
 
                             {/* NAV LINKS (DESKTOP) */}
                             <div className="hidden lg:flex justify-center items-center">

@@ -58,7 +58,7 @@ function GeneratedProjectsContent() {
         if (decryptedData?.projects) {
           setProjects(decryptedData.projects);
           setIsLoading(false);
-          showToast("🔒 Secure session loaded successfully!");
+          setTimeout(() => showToast("🔒 Secure session loaded successfully!"), 0);
         } else {
           throw new Error("Invalid decrypted data format");
         }
@@ -66,12 +66,12 @@ function GeneratedProjectsContent() {
         console.error("Error loading data:", error);
         setIsInvalid(true);
         setIsLoading(false);
-        showToast("Error loading secure session. Please try again.");
+        setTimeout(() => showToast("Error loading secure session. Please try again."), 0);
       }
     };
 
     loadData();
-  }, [showToast]);
+  }, []);
 
   const handleBack = useCallback(() => {
     router.push("/tools/project-ideas");
