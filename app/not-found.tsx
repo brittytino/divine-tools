@@ -153,7 +153,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white/70 text-xl max-w-xl mx-auto"
         >
-          Oops! The page you're looking for seems to have wandered off into the digital void.
+          We can&apos;t seem to find the page you&apos;re looking for.
         </motion.p>
 
         {/* Interactive Card */}

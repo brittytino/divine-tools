@@ -37,7 +37,7 @@ export function UserDetailsForm({ onSubmit, initialDetails }: UserDetailsFormPro
       name: "",
       collegeName: "",
       year: "",
-      interestedDomain: "" as Domain,
+      interestedDomain: "web" as Domain,
     }
   );
 

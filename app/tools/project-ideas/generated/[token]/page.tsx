@@ -71,7 +71,7 @@ function GeneratedProjectsContent() {
     };
 
     loadData();
-  }, []);
+  }, [showToast]);
 
   const handleBack = useCallback(() => {
     router.push("/tools/project-ideas");

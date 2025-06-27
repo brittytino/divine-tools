@@ -20,14 +20,14 @@ import { ToastProvider, useToast } from "./components/ToastProvider";
 
 // Import constants and types
 import { sampleProjects, popupMessages } from "./constants";
-import { Project, SortOption, FilterOption } from "./types";
+import { Project, SortOption, FilterOption, Domain } from "./types";
 import { generateSecureToken, encryptData } from "./lib/encryption";
 
 function ProjectIdeasGeneratorContent() {
   const router = useRouter();
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [showUserForm, setShowUserForm] = useState(true);
-  const [selectedDomain, setSelectedDomain] = useState("");
+  const [selectedDomain, setSelectedDomain] = useState<Domain>("web");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedProjects, setGeneratedProjects] = useState<Project[]>([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -84,7 +84,7 @@ function ProjectIdeasGeneratorContent() {
     setUserDetails(details);
     localStorage.setItem("projectGenerator_userDetails", JSON.stringify(details));
     setShowUserForm(false);
-    setSelectedDomain(details.interestedDomain.toLowerCase().split(" ")[0]);
+    setSelectedDomain(details.interestedDomain.toLowerCase().split(" ")[0] as Domain);
     showToast("Welcome! Let's start generating some amazing project ideas!");
   };
 

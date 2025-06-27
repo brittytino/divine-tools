@@ -5,10 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { Users, Star, TrendingUp, RefreshCw, Rocket } from "lucide-react";
 import { DomainSelect } from "./DomainSelect";
 import { dynamicStats } from "../constants";
+import { Domain } from "../types";
 
 interface ProjectGenerationFormProps {
-  selectedDomain: string;
-  onDomainChange: (domain: string) => void;
+  selectedDomain: Domain;
+  onDomainChange: (domain: Domain) => void;
   onGenerate: () => void;
   isGenerating: boolean;
   progress: number;
