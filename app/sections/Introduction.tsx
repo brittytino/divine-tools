@@ -84,7 +84,7 @@ export default function Introduction() {
                             ))}
                         </span>
                         <span className="text-lime-400 block mt-4">
-                            That's why we built Divine Tools.
+                            That&apos;s why we built Divine Tools.
                         </span>
                     </div>
                 </div>
