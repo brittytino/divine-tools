@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Shield, Lock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectResults } from "../../components/ProjectResults";
-import { Project } from "../../types";
+import { Project, SortOption, FilterOption } from "../../types";
 import { UserDetails } from "../../components/UserDetailsForm";
 import { decryptData } from "../../lib/encryption";
 import { ToastProvider, useToast } from "../../components/ToastProvider";
@@ -21,8 +21,8 @@ function GeneratedProjectsContent() {
 
   // States for ProjectResults component
   const [likedProjects, setLikedProjects] = useState<Set<number>>(new Set());
-  const [sortBy, setSortBy] = useState("trending");
-  const [selectedDomains, setSelectedDomains] = useState([]);
+  const [sortBy, setSortBy] = useState<SortOption>("trending");
+  const [selectedDomains, setSelectedDomains] = useState<FilterOption>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Load data only once on mount
@@ -55,9 +55,13 @@ function GeneratedProjectsContent() {
         }
 
         const decryptedData = decryptData(encryptedData);
-        setProjects(decryptedData.projects);
-        setIsLoading(false);
-        showToast("🔒 Secure session loaded successfully!");
+        if (decryptedData?.projects) {
+          setProjects(decryptedData.projects);
+          setIsLoading(false);
+          showToast("🔒 Secure session loaded successfully!");
+        } else {
+          throw new Error("Invalid decrypted data format");
+        }
       } catch (error) {
         console.error("Error loading data:", error);
         setIsInvalid(true);
@@ -170,8 +174,6 @@ function GeneratedProjectsContent() {
           projects={projects}
           userDetails={userDetails}
           onLike={handleLike}
-          onView={handleViewProject}
-          onExport={() => {}}
           likedProjects={likedProjects}
           sortBy={sortBy}
           onSortChange={setSortBy}

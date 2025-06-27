@@ -2,9 +2,9 @@ import Image from "next/image";
 import siteLogo from "@/assets/images/dlogo.png";
 
 const footerLinks = [
-    { href: "#", label: "Contact" },
-    { href: "#", label: "Privacy Policy" },
-    { href: "#", label: "Terms & Conditions" },
+    { id: 1, href: "#contact", label: "Contact" },
+    { id: 2, href: "#privacy", label: "Privacy Policy" },
+    { id: 3, href: "#terms", label: "Terms & Conditions" },
 ];
 
 export default function Footer() {
@@ -20,9 +20,9 @@ export default function Footer() {
                         <nav className="flex gap-6">
                             {footerLinks.map((link) => (
                                 <a
-                                    key={link.href}
+                                    key={link.id}
                                     href={link.href}
-                                    className="text-white/50 text-sm "
+                                    className="text-white/50 text-sm hover:text-white/80 transition-colors duration-200"
                                 >
                                     {link.label}
                                 </a>

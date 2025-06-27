@@ -22,7 +22,7 @@ export const generateProjectPDF = (project: Project, userDetails: UserDetails | 
   // Divine Infotec Logo Text
   pdf.setTextColor(255, 255, 255);
   pdf.setFontSize(24);
-  pdf.text('DIVINE INFOTEC', 20, 20);
+  pdf.text('DIVINE INFOTECH', 20, 20);
   pdf.setFontSize(12);
   pdf.text('Project Specification Document', 20, 30);
 
