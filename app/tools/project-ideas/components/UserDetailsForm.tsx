@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/sections/Navbar";
+import { Domain } from "../types";
+import { domains } from "../constants";
 
 import {
   Select,
@@ -19,7 +21,7 @@ export interface UserDetails {
   name: string;
   collegeName: string;
   year: string;
-  interestedDomain: string;
+  interestedDomain: Domain;
 }
 
 interface UserDetailsFormProps {
@@ -28,7 +30,6 @@ interface UserDetailsFormProps {
 }
 
 const yearOptions = ["1st Year", "2nd Year", "3rd Year", "4th Year", "Final Year"];
-const domainOptions = ["Web Development", "Mobile Development", "AI/ML", "IoT", "Blockchain"];
 
 export function UserDetailsForm({ onSubmit, initialDetails }: UserDetailsFormProps) {
   const [details, setDetails] = useState<UserDetails>(
@@ -36,14 +37,14 @@ export function UserDetailsForm({ onSubmit, initialDetails }: UserDetailsFormPro
       name: "",
       collegeName: "",
       year: "",
-      interestedDomain: "",
+      interestedDomain: "" as Domain,
     }
   );
 
-  const [errors, setErrors] = useState<Partial<UserDetails>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
-    const newErrors: Partial<UserDetails> = {};
+    const newErrors: Record<string, string> = {};
     if (!details.name.trim()) newErrors.name = "Name is required";
     if (!details.collegeName.trim()) newErrors.collegeName = "College name is required";
     if (!details.year) newErrors.year = "Year is required";
@@ -163,19 +164,21 @@ export function UserDetailsForm({ onSubmit, initialDetails }: UserDetailsFormPro
                 </Label>
                 <Select
                   value={details.interestedDomain}
-                  onValueChange={(value) => setDetails({ ...details, interestedDomain: value })}
+                  onValueChange={(value) => setDetails({ ...details, interestedDomain: value as Domain })}
                 >
                   <SelectTrigger className="bg-neutral-800 border-white/10 text-white">
                     <SelectValue placeholder="Select your preferred domain" />
                   </SelectTrigger>
                   <SelectContent className="bg-neutral-800 border-white/10">
-                    {domainOptions.map((domain) => (
+                    {domains.map((domain) => (
                       <SelectItem
-                        key={domain}
-                        value={domain}
+                        key={domain.id}
+                        value={domain.id}
                         className="text-white hover:bg-white/10"
                       >
-                        {domain}
+                        <span className="flex items-center gap-2">
+                          {domain.icon} {domain.name}
+                        </span>
                       </SelectItem>
                     ))}
                   </SelectContent>

@@ -65,12 +65,12 @@ function ProjectIdeasGeneratorContent() {
     const savedUserDetails = localStorage.getItem("projectGenerator_userDetails");
     const savedProjectsData = localStorage.getItem("projectGenerator_savedProjects");
     const savedLikedProjects = localStorage.getItem("projectGenerator_likedProjects");
-    
+
     if (savedUserDetails) {
       setUserDetails(JSON.parse(savedUserDetails));
       setShowUserForm(false);
     }
-    
+
     if (savedProjectsData) {
       setSavedProjects(JSON.parse(savedProjectsData));
     }
@@ -93,10 +93,10 @@ function ProjectIdeasGeneratorContent() {
       showToast("Please select a domain first!");
       return;
     }
-    
+
     setIsGenerating(true);
     setProgress(0);
-    
+
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -198,7 +198,7 @@ function ProjectIdeasGeneratorContent() {
       });
 
       const imgData = canvas.toDataURL('image/png');
-      
+
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -207,7 +207,7 @@ function ProjectIdeasGeneratorContent() {
 
       const imgWidth = 210;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      
+
       pdf.setFontSize(12);
       pdf.setTextColor(128, 128, 128);
       pdf.text(`Generated for: ${userDetails.name}`, 20, 20);
@@ -233,28 +233,28 @@ function ProjectIdeasGeneratorContent() {
 
   if (showUserForm) {
     return (
-      <div className="min-h-screen bg-neutral-900 py-16">
+      <div className="min-h-screen bg-black py-16">
         <UserDetailsForm onSubmit={handleUserDetailsSubmit} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-neutral-900">
+    <div className="min-h-screen bg-black">
       <Header userDetails={userDetails} onClearData={() => setShowFlushDialog(true)} />
 
-      <div className="min-h-[calc(100vh-64px)] lg:h-[calc(100vh-64px)] overflow-auto lg:overflow-hidden bg-gradient-to-b from-neutral-950 to-black px-4 md:px-8 py-8">
-  <div className="flex items-center justify-center h-full w-full">
-    <div className="w-full max-w-7xl">
-      <ProjectGenerationForm
-        selectedDomain={selectedDomain}
-        onDomainChange={setSelectedDomain}
-        onGenerate={handleGenerate}
-        isGenerating={isGenerating}
-        progress={progress}
-      />
-    </div>
-  </div>
+      <div className="min-h-[calc(100vh-64px)] lg:h-[calc(100vh-64px)] overflow-auto lg:overflow-hidden bg-black px-4 md:px-8 py-8">
+        <div className="flex items-center justify-center h-full w-full">
+          <div className="w-full max-w-7xl">
+            <ProjectGenerationForm
+              selectedDomain={selectedDomain}
+              onDomainChange={setSelectedDomain}
+              onGenerate={handleGenerate}
+              isGenerating={isGenerating}
+              progress={progress}
+            />
+          </div>
+        </div>
 
         <ProjectResults
           projects={generatedProjects}
@@ -280,11 +280,11 @@ function ProjectIdeasGeneratorContent() {
 
         <div className="fixed bottom-6 right-6 flex items-center gap-4">
           <ShareWidget />
-            </div>
+        </div>
 
         {/* Flush Data Confirmation Dialog */}
         <AlertDialog open={showFlushDialog} onOpenChange={setShowFlushDialog}>
-          <AlertDialogContent className="bg-neutral-900/95 backdrop-blur-md border-white/10 rounded-2xl">
+          <AlertDialogContent className="bg-black/95 backdrop-blur-md border-white/10 rounded-2xl">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-white">Clear All Data?</AlertDialogTitle>
               <AlertDialogDescription className="text-white/70">

@@ -8,7 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SortOption, FilterOption } from "../types";
+import { SortOption, FilterOption, Domain } from "../types";
+import { domains } from "../constants";
 
 interface FilterSortProps {
   sortBy: SortOption;
@@ -21,20 +22,8 @@ interface FilterSortProps {
 
 const SORT_OPTIONS = [
   { value: "trending", label: "Trending" },
-  { value: "popular", label: "Most Popular" },
-  { value: "Beginner", label: "Beginner Friendly" },
-  { value: "Advanced", label: "Advanced" },
-];
-
-const DOMAIN_OPTIONS = [
-  "Web Development",
-  "Mobile Development",
-  "AI/ML",
-  "Data Science",
-  "Blockchain",
-  "IoT",
-  "Cloud Computing",
-  "DevOps",
+  { value: "views", label: "Most Viewed" },
+  { value: "random", label: "Random" },
 ];
 
 function FilterSortComponent({
@@ -45,11 +34,11 @@ function FilterSortComponent({
   searchQuery,
   onSearchChange,
 }: FilterSortProps) {
-  const handleDomainChange = useCallback((domain: string) => {
-    if (selectedDomains.includes(domain)) {
-      onDomainFilterChange(selectedDomains.filter(d => d !== domain));
+  const handleDomainChange = useCallback((domainId: Domain) => {
+    if (selectedDomains.includes(domainId)) {
+      onDomainFilterChange(selectedDomains.filter(d => d !== domainId));
     } else {
-      onDomainFilterChange([...selectedDomains, domain]);
+      onDomainFilterChange([...selectedDomains, domainId]);
     }
   }, [selectedDomains, onDomainFilterChange]);
 
@@ -97,17 +86,17 @@ function FilterSortComponent({
 
       {/* Domain Filter Pills */}
       <div className="flex flex-wrap gap-2">
-        {DOMAIN_OPTIONS.map((domain) => (
+        {domains.map((domain) => (
           <button
-            key={domain}
-            onClick={() => handleDomainChange(domain)}
+            key={domain.id}
+            onClick={() => handleDomainChange(domain.id as Domain)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-              selectedDomains.includes(domain)
+              selectedDomains.includes(domain.id as Domain)
                 ? "bg-lime-400/20 text-lime-400 border border-lime-400/30 shadow-[0_0_15px_rgba(163,230,53,0.2)]"
                 : "bg-neutral-800/50 text-white/70 border border-white/10 hover:bg-white/5 hover:border-white/20"
             }`}
           >
-            {domain}
+            {domain.icon} {domain.name}
           </button>
         ))}
       </div>

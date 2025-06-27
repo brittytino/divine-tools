@@ -109,7 +109,7 @@ function GeneratedProjectsContent() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-neutral-900 flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center space-y-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -127,8 +127,8 @@ function GeneratedProjectsContent() {
 
   if (isInvalid) {
     return (
-      <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-neutral-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center space-y-4">
+      <div className="min-h-screen bg-black flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-black/50 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center space-y-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -151,8 +151,8 @@ function GeneratedProjectsContent() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-900">
-      <div className="fixed top-0 left-0 right-0 bg-neutral-900/95 backdrop-blur-xl border-b border-white/10 z-50">
+    <div className="min-h-screen bg-black">
+      <div className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 z-50">
         <div className="container max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <Button
             onClick={handleBack}

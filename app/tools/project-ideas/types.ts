@@ -1,47 +1,35 @@
-export interface Domain {
-  id: string;
-  name: string;
-  icon: string;
-  description: string;
-  trending: boolean;
-  trendingMessage?: string;
-}
+export type Domain = "web" | "mobile" | "ai" | "iot" | "cybersec" | "cloud" | "data" | "backend";
 
-export type Project = {
+export type FilterOption = Domain[];
+
+export type SortOption = "trending" | "views" | "random";
+
+export interface Project {
   title: string;
   description: string;
-  difficulty: "Beginner" | "Intermediate" | "Advanced";
-  domain: string;
   stack: string[];
-  features?: string[];
-  duration?: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
   teamSize: number;
-  complexity?: string;
   views: number;
   trending: boolean;
-};
+  domain: Domain;
+}
 
 export interface Testimonial {
   name: string;
+  role: string;
+  company: string;
+  image: string;
   text: string;
-  college: string;
-  rating: number;
-  avatar: string;
-  image?: string;
 }
 
 export interface DynamicStat {
+  icon: any;
   label: string;
-  value: number;
-  suffix?: string;
-  icon: React.ElementType;
+  value: string;
 }
 
 export interface PopupMessage {
-  text: string;
-  type: 'tip' | 'success' | 'trending';
-  icon: string;
-}
-
-export type SortOption = "trending" | "popular" | "Beginner" | "Advanced";
-export type FilterOption = string[]; 
+  type: "success" | "error" | "info";
+  message: string;
+} 

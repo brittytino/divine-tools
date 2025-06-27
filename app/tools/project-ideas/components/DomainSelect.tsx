@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, Globe, Server, Cpu, Shield, Phone } from "lucide-react";
+import { Code, Database, Globe, Server, Cpu, Shield, Phone, Radio } from "lucide-react";
+import { Domain } from "../types";
 
 interface DomainSelectProps {
-  value: string;
-  onValueChange: (value: string) => void;
+  value: Domain;
+  onValueChange: (value: Domain) => void;
 }
 
 const domains = [
   {
-    id: "web",
+    id: "web" as Domain,
     name: "Web Development",
     icon: Globe,
     description: "Build modern web applications with React, Next.js, and more",
@@ -21,7 +22,7 @@ const domains = [
     borderColor: "border-sky-400/30"
   },
   {
-    id: "mobile",
+    id: "mobile" as Domain,
     name: "App Development",
     icon: Phone,
     description: "Create native mobile apps with React Native or Flutter",
@@ -30,7 +31,7 @@ const domains = [
     borderColor: "border-violet-400/30"
   },
   {
-    id: "ai",
+    id: "ai" as Domain,
     name: "AI/ML",
     icon: Cpu,
     description: "Develop machine learning models and AI applications",
@@ -39,7 +40,7 @@ const domains = [
     borderColor: "border-lime-400/30"
   },
   {
-    id: "cloud",
+    id: "cloud" as Domain,
     name: "Cloud Computing",
     icon: Server,
     description: "Build scalable cloud solutions with AWS, Azure, or GCP",
@@ -48,7 +49,7 @@ const domains = [
     borderColor: "border-amber-400/30"
   },
   {
-    id: "data",
+    id: "data" as Domain,
     name: "Data Science",
     icon: Database,
     description: "Analyze and visualize data with Python and modern tools",
@@ -57,7 +58,7 @@ const domains = [
     borderColor: "border-emerald-400/30"
   },
   {
-    id: "security",
+    id: "cybersec" as Domain,
     name: "Cyber Security",
     icon: Shield,
     description: "Implement security measures and protect digital assets",
@@ -66,13 +67,22 @@ const domains = [
     borderColor: "border-rose-400/30"
   },
   {
-    id: "backend",
+    id: "backend" as Domain,
     name: "Backend Development",
     icon: Code,
     description: "Create robust server-side applications and APIs",
     color: "text-blue-400",
     bgColor: "bg-blue-400/20",
     borderColor: "border-blue-400/30"
+  },
+  {
+    id: "iot" as Domain,
+    name: "IoT",
+    icon: Radio,
+    description: "Build Internet of Things and embedded systems solutions",
+    color: "text-purple-400",
+    bgColor: "bg-purple-400/20",
+    borderColor: "border-purple-400/30"
   }
 ];
 
@@ -128,7 +138,7 @@ export function DomainSelect({ value, onValueChange }: DomainSelectProps) {
         ))}
       </div>
 
-      <Select value={value || "all"} onValueChange={onValueChange}>
+      <Select value={value} onValueChange={onValueChange}>
         <SelectTrigger className="bg-neutral-800 border-white/10 text-white focus:ring-2 focus:ring-lime-400 rounded-lg">
           <SelectValue placeholder="Select a domain" />
         </SelectTrigger>
