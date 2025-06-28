@@ -179,7 +179,7 @@ export default function NotFound() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Let's get you back on track to creating amazing projects!
+              Let&apos;s get you back on track to creating amazing projects!
             </motion.p>
             
             {/* Action Buttons */}
