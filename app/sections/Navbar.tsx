@@ -104,18 +104,18 @@ export default function Navbar() {
                         transition-all duration-300 hover:border-lime-400/30 hover:shadow-2xl
                     `}>
                         <div className="grid grid-cols-2 lg:grid-cols-3 items-center py-3 px-4 lg:px-8">
-                            <Link href="/" className="flex items-center gap-3">
-                                <div className="relative">
-                                    <Image
-                                        src={logoImage}
-                                        alt="Divine Tools Logo"
-                                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-                                    />
-                                </div>
+                        <Link href="/" className="flex items-center gap-3">
+  <div className="relative">
+    <Image
+      src={logoImage}
+      alt="Divine Tools Logo"
+      className="h-8 sm:h-10 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
                                 <h1 className="text-white text-lg sm:text-xl lg:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-lime-400 bg-clip-text text-transparent">
-                                    DivineLab
-                                </h1>
-                            </Link>
+    DivineLab
+  </h1>
+</Link>
 
                             {/* NAV LINKS (DESKTOP) */}
                             <div className="hidden lg:flex justify-center items-center">
@@ -254,21 +254,21 @@ export default function Navbar() {
                                                 </Link>
                                             ))}
                                         </div>
-
+                                        
                                         {/* Mobile Auth Buttons */}
                                         <div className="space-y-3 border-t border-lime-400/10 pt-4">
-                                            <Button 
-                                                variant="secondary" 
+                                                <Button 
+                                                    variant="secondary" 
                                                 className="w-full py-2.5 text-sm font-medium border-lime-400/20"
-                                            >
-                                                Login
-                                            </Button>
-                                            <Button 
-                                                variant="primary" 
+                                                >
+                                                    Login
+                                                </Button>
+                                                <Button 
+                                                    variant="primary" 
                                                 className="w-full py-2.5 text-sm font-medium bg-lime-400 hover:bg-lime-500 text-black"
-                                            >
-                                                Sign Up
-                                            </Button>
+                                                >
+                                                    Sign Up
+                                                </Button>
                                         </div>
                                     </div>
                                 </motion.div>
